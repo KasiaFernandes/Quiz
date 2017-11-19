@@ -13,6 +13,9 @@ class App extends React.Component {
     }
 }
 
+// render UserForm first, if user names not blank, render layout
+
+// Layout 
 render() {
     return (
         <div>
