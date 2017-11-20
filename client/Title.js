@@ -1,5 +1,11 @@
 import React from 'react';
 
+// TODO: replace with 
+// import style from "./Title.css" 
+const style = {
+    Title: "Title"
+}
+
 const Title = props => {
     return (
         <div className={style.Title}>
