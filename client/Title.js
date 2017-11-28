@@ -1,6 +1,9 @@
 import React from 'react';
 import style from './Title.css';
 
+// TODO: replace with 
+// import style from "./Title.css" 
+
 const Title = props => {
     return (
         <div className={style.Title}>

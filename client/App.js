@@ -4,18 +4,15 @@ import UserForm from './UserForm.js';
 import Questions from './Questions.js';
 import QuestionsData from './QuestionsData.js';
 
-
 class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { name: '' };
     }
-
+    // Layout 
     render() {
         return (
             <div>
-                <Title title="Welcome to the quiz!" />
-
+                <Title title="Welcome to the quiz!!!!" />
             </div>
         )
     }
