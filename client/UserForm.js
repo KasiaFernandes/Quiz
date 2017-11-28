@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+import styles from './UserForm.css';
 
 class UserForm extends Component {
     constructor(props) {
@@ -19,10 +20,14 @@ class UserForm extends Component {
 
     render() {
         return (
-            <form className={styles.UserForm} onSubmit={e => this.handleSubmit(e)}>
-                <input className={styles.UserInput} value={this.state.name} onChange={e => this.handleChange(e)} placeholder="Name of the first participant" />
-                <input className={styles.UserInput} value={this.state.name} onChange={e => this.handleChange(e)} placeholder="Name of the second participant" />
-            </form>
+            <div>
+                <form className={styles.UserForm} onSubmit={e => this.handleSubmit(e)}>
+                    <input className={styles.UserInput} value={this.state.name} onChange={e => this.handleChange(e)} placeholder="Name of the first participant" />
+                </form>
+                <form className={styles.UserForm} onSubmit={e => this.handleSubmit(e)}>
+                    <input className={styles.UserInput} value={this.state.name} onChange={e => this.handleChange(e)} placeholder="Name of the second participant" />
+                </form>
+            </div>
         )
     }
 }
