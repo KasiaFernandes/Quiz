@@ -8,8 +8,17 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            questionsData: QuestionsData
+            questionsData: QuestionsData,
+            selectedQIndex: 0
         }
+        this.getRandomQuestion = this.getRandomQuestion.bind(this)
+    }
+
+
+    getRandomQuestion() {
+        this.setState({
+            selectedQIndex: Math.floor(Math.random() * this.state.questionsData.length)
+        })
     }
 
     // Layout 
@@ -17,7 +26,8 @@ class App extends React.Component {
         return (
             <div>
                 <Title title="Welcome to the quiz!!!!" />
-                <Question question={this.state.questionsData[0]} />
+                <Question question={this.state.questionsData[this.state.selectedQIndex]} />
+                <button onClick={this.getRandomQuestion}>GET QUESTION!</button>
             </div>
         )
     }
