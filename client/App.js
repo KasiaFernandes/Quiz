@@ -25,8 +25,10 @@ class App extends React.Component {
             })
         } else {
             this.setState({
-                questionsData: this.state.questionsData.filter((question, index) => index !== selectedQIndex),
-                selectedQuestion: this.state.questionsData[selectedQIndex]
+                questionsData: questionsData,
+                selectedQuestion: selectedQuestion
+                // questionsData: this.state.questionsData.filter((question, index) => index !== selectedQIndex),
+                // selectedQuestion: this.state.questionsData[selectedQIndex]
             })
         }
     }
