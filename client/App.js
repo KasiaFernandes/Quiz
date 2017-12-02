@@ -9,16 +9,26 @@ class App extends React.Component {
         super(props);
         this.state = {
             questionsData: QuestionsData,
-            selectedQIndex: 0
+            selectedQuestion: QuestionsData[0]
         }
         this.getRandomQuestion = this.getRandomQuestion.bind(this)
     }
 
 
     getRandomQuestion() {
-        this.setState({
-            selectedQIndex: Math.floor(Math.random() * this.state.questionsData.length)
-        })
+        const selectedQIndex = Math.floor(Math.random() * this.state.questionsData.length)
+        const selectedQuestion = this.state.questionsData[selectedQIndex]
+        const questionsData = this.state.questionsData.filter((question, index) => index !== selectedQIndex)
+        if (selectedQuestion === undefined) {
+            this.setState({
+                selectedQuestion: 'Quiz completed!'
+            })
+        } else {
+            this.setState({
+                questionsData: this.state.questionsData.filter((question, index) => index !== selectedQIndex),
+                selectedQuestion: this.state.questionsData[selectedQIndex]
+            })
+        }
     }
 
     // Layout 
@@ -26,7 +36,7 @@ class App extends React.Component {
         return (
             <div>
                 <Title title="Welcome to the quiz!!!!" />
-                <Question question={this.state.questionsData[this.state.selectedQIndex]} />
+                <Question question={this.state.selectedQuestion} />
                 <button onClick={this.getRandomQuestion}>GET QUESTION!</button>
             </div>
         )
