@@ -22,7 +22,7 @@ class UserForm extends Component {
         return (
             <div>
                 <form className={styles.UserForm} onSubmit={e => this.handleSubmit(e)}>
-                    <input className={styles.UserInput} value={this.state.name} onChange={e => this.handleChange(e)} placeholder="Name of the first participant" />
+                    <input className={styles.UserInput} value={this.state.name} onChange={e => this.handleChange(e)} placeholder="Name of the participant" />
                 </form>
             </div>
         )
@@ -32,3 +32,11 @@ class UserForm extends Component {
 
 
 export default UserForm;
+
+//onSubmit={e => this.handleSubmit(e)}
+/*
+handleSubmit(e) {
+    e.preventDefault();
+    this.props.onUserSubmit(this.state.name);
+}
+*/
