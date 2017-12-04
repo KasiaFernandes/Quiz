@@ -9,28 +9,26 @@ class App extends React.Component {
         super(props);
         this.state = {
             questionsData: QuestionsData,
-            selectedQuestion: QuestionsData[0]
+            selectedQuestion: undefined
         }
         this.getRandomQuestion = this.getRandomQuestion.bind(this)
     }
 
+    componentWillMount() {
+        this.getRandomQuestion()
+    }
 
     getRandomQuestion() {
         const selectedQIndex = Math.floor(Math.random() * this.state.questionsData.length)
         const selectedQuestion = this.state.questionsData[selectedQIndex]
         const questionsData = this.state.questionsData.filter((question, index) => index !== selectedQIndex)
-        if (selectedQuestion === undefined) {
-            this.setState({
-                selectedQuestion: 'Quiz completed!'
-            })
-        } else {
-            this.setState({
-                questionsData: questionsData,
-                selectedQuestion: selectedQuestion
-                // questionsData: this.state.questionsData.filter((question, index) => index !== selectedQIndex),
-                // selectedQuestion: this.state.questionsData[selectedQIndex]
-            })
-        }
+        this.setState({
+            questionsData: questionsData,
+            selectedQuestion: selectedQuestion
+            // questionsData: this.state.questionsData.filter((question, index) => index !== selectedQIndex),
+            // selectedQuestion: this.state.questionsData[selectedQIndex]
+        })
+
     }
 
     // Layout 
@@ -38,8 +36,12 @@ class App extends React.Component {
         return (
             <div>
                 <Title title="Welcome to the quiz!!!!" />
-                <Question question={this.state.selectedQuestion} />
-                <button onClick={this.getRandomQuestion}>GET QUESTION!</button>
+                {this.state.questionsData.length ?
+                    <div>
+                        <Question question={this.state.selectedQuestion} />
+                        <button onClick={this.getRandomQuestion}>GET QUESTION!</button>
+                    </div> : "No more questions!"
+                }
             </div>
         )
     }
