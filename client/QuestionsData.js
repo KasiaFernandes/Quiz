@@ -5,15 +5,15 @@ let QuestionsData = [
         answers: [
             {
                 answer: "Microsoft Internet Explorer 2.0 beta",
-                correct: "false"
+                correct: false
             },
             {
                 answer: "Netscape Navigator 2.0 beta",
-                correct: "true"
+                correct: true
             },
             {
                 answer: "Opera 2.0 beta",
-                correct: "false"
+                correct: false
             }
         ]
     },
@@ -23,15 +23,15 @@ let QuestionsData = [
         answers: [
             {
                 answer: "Netscape Communications Corp.",
-                correct: "true"
+                correct: true
             },
             {
                 answer: "Microsoft Corp.",
-                correct: "false"
+                correct: false
             },
             {
                 answer: "Sun Microsystems Corp.",
-                correct: "false"
+                correct: false
             }
         ]
     },
@@ -41,15 +41,15 @@ let QuestionsData = [
         answers: [
             {
                 answer: "ECMA-262 Standard",
-                correct: "true"
+                correct: true
             },
             {
                 answer: "JavaScript 1.3 Standard",
-                correct: "false"
+                correct: false
             },
             {
                 answer: "ISO-262 Standard",
-                correct: "false"
+                correct: false
             }
         ]
     },
@@ -59,15 +59,15 @@ let QuestionsData = [
         answers: [
             {
                 answer: "JavaScript",
-                correct: "false"
+                correct: false
             },
             {
                 answer: "LiveScript",
-                correct: "true"
+                correct: true
             },
             {
                 answer: "ECMAScript",
-                correct: "false"
+                correct: false
             }
         ]
     },
@@ -77,15 +77,15 @@ let QuestionsData = [
         answers: [
             {
                 answer: "2",
-                correct: "true"
+                correct: true
             },
             {
                 answer: "0",
-                correct: "false"
+                correct: false
             },
             {
                 answer: " '11' ",
-                correct: "false"
+                correct: false
             }
         ]
     },
@@ -95,15 +95,15 @@ let QuestionsData = [
         answers: [
             {
                 answer: "String()",
-                correct: "false"
+                correct: false
             },
             {
                 answer: "Stringlength()",
-                correct: "false"
+                correct: false
             },
             {
                 answer: "CharAt()",
-                correct: "true"
+                correct: true
             }
         ]
     },
@@ -113,15 +113,15 @@ let QuestionsData = [
         answers: [
             {
                 answer: "Alert",
-                correct: "false"
+                correct: false
             },
             {
                 answer: "Prompt",
-                correct: "true"
+                correct: true
             },
             {
                 answer: "Confirm",
-                correct: "false"
+                correct: false
             }
         ]
     },
@@ -131,15 +131,15 @@ let QuestionsData = [
         answers: [
             {
                 answer: "[]",
-                correct: "false"
+                correct: false
             },
             {
                 answer: " '[]' ",
-                correct: "false"
+                correct: false
             },
             {
                 answer: " '...' ",
-                correct: "true"
+                correct: true
             }
         ]
     },
@@ -149,15 +149,15 @@ let QuestionsData = [
         answers: [
             {
                 answer: "true",
-                correct: "false"
+                correct: false
             },
             {
                 answer: "false",
-                correct: "true"
+                correct: true
             },
             {
                 answer: "NaN",
-                correct: "false"
+                correct: false
             }
         ]
     },
@@ -167,15 +167,15 @@ let QuestionsData = [
         answers: [
             {
                 answer: "return",
-                correct: "true"
+                correct: true
             },
             {
                 answer: "cancel",
-                correct: "false"
+                correct: false
             },
             {
                 answer: "continue",
-                correct: "false"
+                correct: false
             }
         ]
     },
