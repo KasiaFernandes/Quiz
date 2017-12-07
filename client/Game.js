@@ -20,6 +20,7 @@ class Game extends React.Component {
         this.getRandomQuestion()
     }
 
+
     getRandomQuestion() {
         const selectedQIndex = Math.floor(Math.random() * this.state.questionsData.length)
         const selectedQuestion = this.state.questionsData[selectedQIndex]
@@ -32,17 +33,26 @@ class Game extends React.Component {
         })
     }
 
+
     onAnswer(answer) {
+        const selectedQIndex = Math.floor(Math.random() * this.state.questionsData.length)
+        const selectedQuestion = this.state.questionsData[selectedQIndex]
+        const questionsData = this.state.questionsData.filter((question, index) => index !== selectedQIndex)
         const score = this.state.score
         if (answer.correct == true) {
             this.setState({
+                questionsData: questionsData,
+                selectedQuestion: selectedQuestion,
                 score: score + 1
             })
         } else {
             this.setState({
+                questionsData: questionsData,
+                selectedQuestion: selectedQuestion,
                 score: score
             })
         }
+
     }
 
     // Layout 
