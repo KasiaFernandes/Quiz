@@ -9,9 +9,11 @@ class Game extends React.Component {
         super(props);
         this.state = {
             questionsData: QuestionsData,
-            selectedQuestion: undefined
+            selectedQuestion: undefined,
+            score: 0
         }
         this.getRandomQuestion = this.getRandomQuestion.bind(this)
+        this.onAnswer = this.onAnswer.bind(this)
     }
 
     componentWillMount() {
@@ -28,17 +30,29 @@ class Game extends React.Component {
             // questionsData: this.state.questionsData.filter((question, index) => index !== selectedQIndex),
             // selectedQuestion: this.state.questionsData[selectedQIndex]
         })
+    }
 
+    onAnswer(answer) {
+        const score = this.state.score
+        if (answer.correct == true) {
+            this.setState({
+                score: score + 1
+            })
+        } else {
+            this.setState({
+                score: score
+            })
+        }
     }
 
     // Layout 
     render() {
         return (
             <div>
-                <Title title="Welcome to the quiz," name={this.state.name} />
+                <Title title="Welcome to the quiz," name={this.state.name} status="Your current score is:" score={this.state.score} />
                 {this.state.questionsData.length ?
                     <div>
-                        <Question question={this.state.selectedQuestion} />
+                        <Question question={this.state.selectedQuestion} onAnswer={this.onAnswer} />
                         <button onClick={this.getRandomQuestion}>GET QUESTION!</button>
                     </div> : "No more questions!"
                 }

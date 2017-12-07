@@ -6,7 +6,7 @@ const Question = props => {
         <div>
             <h2>{props.question.question}</h2>
             <ul>
-                {props.question.answers.map((answer, index) => <li key={index}>{answer.answer}</li>)}
+                {props.question.answers.map((answer, index) => <li onClick={() => props.onAnswer(answer)} key={index}>{answer.answer}</li>)}
             </ul>
         </div>
     )
