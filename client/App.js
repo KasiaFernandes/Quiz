@@ -13,7 +13,7 @@ class App extends React.Component {
 
     renderGame() {
         return (
-            <Game />
+            <Game name={this.state.name} />
         )
     }
 

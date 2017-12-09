@@ -49,7 +49,7 @@ class Game extends React.Component {
     render() {
         return (
             <div>
-                <Title title="Welcome to the quiz," name={this.state.name} status="Your current score is:" score={this.state.score} />
+                <Title title="Welcome to the quiz," name={this.props.name} status="Your current score is:" score={this.state.score} />
                 {this.state.questionsData.length ?
                     <div>
                         <Question question={this.state.selectedQuestion} onAnswer={this.onAnswer} />
