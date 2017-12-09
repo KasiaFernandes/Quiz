@@ -23,20 +23,27 @@ class Game extends React.Component {
 
 
     getRandomQuestion() {
-        const selectedQIndex = Math.floor(Math.random() * this.state.questionsData.length);
-        const selectedQuestion = this.state.questionsData[selectedQIndex];
+        // const selectedQIndex = Math.floor(Math.random() * this.state.questionsData.length);
+        // const selectedQuestion = this.state.questionsData[selectedQIndex];
         // const questionsData = this.state.questionsData.filter((question, index) => index !== selectedQIndex)
-        this.setState({
-            selectedQuestion: selectedQuestion
+        this.setState(state => {
+            const selectedQIndex = Math.floor(Math.random() * this.state.questionsData.length);
+            const selectedQuestion = this.state.questionsData[selectedQIndex];
+            return {
+                selectedQuestion: selectedQuestion
+            }
             // questionsData: this.state.questionsData.filter((question, index) => index !== selectedQIndex),
             // selectedQuestion: this.state.questionsData[selectedQIndex]
         })
     }
 
     removeQuestion() {
-        const questionsData = this.state.questionsData.filter(question => question !== this.state.selectedQuestion);
-        this.setState({
-            questionsData: questionsData,
+        // const questionsData = this.state.questionsData.filter(question => question !== this.state.selectedQuestion);
+        this.setState(state => {
+            const questionsData = this.state.questionsData.filter(question => question !== this.state.selectedQuestion);
+            return {
+                questionsData: questionsData
+            }
         })
     }
 
