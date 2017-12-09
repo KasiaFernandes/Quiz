@@ -12,8 +12,9 @@ class Game extends React.Component {
             selectedQuestion: undefined,
             score: 0
         }
-        this.getRandomQuestion = this.getRandomQuestion.bind(this)
-        this.onAnswer = this.onAnswer.bind(this)
+        this.getRandomQuestion = this.getRandomQuestion.bind(this);
+        this.removeQuestion = this.removeQuestion.bind(this);
+        this.onAnswer = this.onAnswer.bind(this);
     }
 
     componentWillMount() {
@@ -22,14 +23,20 @@ class Game extends React.Component {
 
 
     getRandomQuestion() {
-        const selectedQIndex = Math.floor(Math.random() * this.state.questionsData.length)
-        const selectedQuestion = this.state.questionsData[selectedQIndex]
-        const questionsData = this.state.questionsData.filter((question, index) => index !== selectedQIndex)
+        const selectedQIndex = Math.floor(Math.random() * this.state.questionsData.length);
+        const selectedQuestion = this.state.questionsData[selectedQIndex];
+        // const questionsData = this.state.questionsData.filter((question, index) => index !== selectedQIndex)
         this.setState({
-            questionsData: questionsData,
             selectedQuestion: selectedQuestion
             // questionsData: this.state.questionsData.filter((question, index) => index !== selectedQIndex),
             // selectedQuestion: this.state.questionsData[selectedQIndex]
+        })
+    }
+
+    removeQuestion() {
+        const questionsData = this.state.questionsData.filter(question => question !== this.state.selectedQuestion);
+        this.setState({
+            questionsData: questionsData,
         })
     }
 
@@ -40,6 +47,7 @@ class Game extends React.Component {
         this.setState({
             score: score + pointsToAdd
         }, () => {
+            this.removeQuestion();
             this.getRandomQuestion();
         })
     }
