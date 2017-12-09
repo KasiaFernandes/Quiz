@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Molengo');
+
+* {
+    font-family: "Molengo", sans-serif;
+}
+
+.Question {
+    text-align: center;
+    color: #311858;
+}
+
+.Question h2 {
+    font-size: 20px;
+    margin: auto;
+    margin-top: 60px;
+    text-transform: uppercase;
+    border: 2px solid #311858;
+    border-radius: 15px;
+    padding: 7px;
+    max-width: 60vw;
+    text-align: center;
+    line-height: 22px;
+}
+
+.Question ul {
+    list-style-type: none;
+    display: inline-block;
+}
+
+.Question ul li {
+    padding: 7px;
+    margin: 7px;
+    border: 2px solid #311858;
+    border-radius: 15px;
+}
+
+.Question ul li:hover {
+    background-color: #5C5393;
+    color: #fff;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.Question ul li:active {
+    background-color: #E29439;
+    color: #311858;
+    border: #FF9D2D;
+    transform: scale(1.2);
+}

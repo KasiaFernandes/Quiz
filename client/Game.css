@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Monoton');
+
+.Game {
+    width: 100vw;
+    height: 100vh;
+}
+
+.End {
+    text-align: center;
+    color: #311858;
+    margin-top: 60px;
+    font-family: "Monoton", sans-serif;
+    font-size: 26px;
+}

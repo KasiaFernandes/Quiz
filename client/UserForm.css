@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+
+.UserForm {
+    background-color: #857DB1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+.UserInput {
+    border: 2px solid #311858;
+    border-radius: 15px;
+    max-width: 250px;
+    padding: 20px;
+    font-size: 20px;
+}

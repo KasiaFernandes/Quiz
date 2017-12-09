@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Title from './Title.js';
 import Question from './Question.js';
 import QuestionsData from './QuestionsData.js';
+import style from './Game.css';
 
 
 class Game extends React.Component {
@@ -27,8 +28,8 @@ class Game extends React.Component {
         // const selectedQuestion = this.state.questionsData[selectedQIndex];
         // const questionsData = this.state.questionsData.filter((question, index) => index !== selectedQIndex)
         this.setState(state => {
-            const selectedQIndex = Math.floor(Math.random() * this.state.questionsData.length);
-            const selectedQuestion = this.state.questionsData[selectedQIndex];
+            const selectedQIndex = Math.floor(Math.random() * state.questionsData.length);
+            const selectedQuestion = state.questionsData[selectedQIndex];
             return {
                 selectedQuestion: selectedQuestion
             }
@@ -40,7 +41,7 @@ class Game extends React.Component {
     removeQuestion() {
         // const questionsData = this.state.questionsData.filter(question => question !== this.state.selectedQuestion);
         this.setState(state => {
-            const questionsData = this.state.questionsData.filter(question => question !== this.state.selectedQuestion);
+            const questionsData = state.questionsData.filter(question => question !== state.selectedQuestion);
             return {
                 questionsData: questionsData
             }
@@ -63,13 +64,13 @@ class Game extends React.Component {
     // Layout 
     render() {
         return (
-            <div>
+            <div className={style.Game}>
                 <Title title="Welcome to the quiz," name={this.props.name} status="Your current score is:" score={this.state.score} />
                 {this.state.questionsData.length ?
                     <div>
                         <Question question={this.state.selectedQuestion} onAnswer={this.onAnswer} />
 
-                    </div> : "No more questions!"
+                    </div> : <h2 className={style.End}>No more questions!</h2>
                 }
             </div>
         )
