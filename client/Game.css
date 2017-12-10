@@ -3,6 +3,7 @@
 .Game {
     width: 100vw;
     height: 100vh;
+    text-align: center;
 }
 
 .End {
@@ -11,4 +12,14 @@
     margin-top: 60px;
     font-family: "Monoton", sans-serif;
     font-size: 26px;
+}
+
+button {
+    background-color: #311858;
+    color: #fff;
+    border-radius: 15%;
+    border: 2px solid #311858;
+    padding: 7px;
+    cursor: pointer;
+    transform: scale(1.2);
 }

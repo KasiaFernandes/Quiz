@@ -60,6 +60,11 @@ class Game extends React.Component {
         })
     }
 
+    /*
+    startAgain() {
+        return (< />)
+    }
+    */
 
     // Layout 
     render() {
@@ -70,7 +75,9 @@ class Game extends React.Component {
                     <div>
                         <Question question={this.state.selectedQuestion} onAnswer={this.onAnswer} />
 
-                    </div> : <h2 className={style.End}>No more questions!</h2>
+                    </div> : <div><h2 className={style.End}>No more questions!</h2>
+                        <button onClick={this.renderUserForm}>START AGAIN</button>
+                    </div>
                 }
             </div>
         )
