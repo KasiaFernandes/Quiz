@@ -1,3 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Molengo');
+
+* {
+    font-family: "Molengo", sans-serif;
+}
 .Title {
+    text-align: center;
+    padding-top: 50px;
+    color: #311858;
+    text-transform: uppercase;
+}
+
+.Title h1 {
+    font-size: 30px;
+}
+
+.Title h3 {
     font-size: 26px;
 }
