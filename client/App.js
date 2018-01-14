@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Game from './Game.js';
 import UserForm from './UserForm.js';
+import Categories from './categories.js';
 
 class App extends React.Component {
     constructor(props) {
@@ -11,14 +11,20 @@ class App extends React.Component {
         this.handleUserSubmit = this.handleUserSubmit.bind(this);
     }
 
+    /*
     renderGame() {
         return (
             <Game name={this.state.name} />
         )
     }
+    */
 
     renderUserForm() {
         return (<UserForm onUserSubmit={name => this.handleUserSubmit(name)} />)
+    }
+
+    renderCategories() {
+        return (<Categories name={this.state.name} />)
     }
 
     handleUserSubmit(name) {
@@ -27,7 +33,7 @@ class App extends React.Component {
 
     render() {
         return (
-            this.state.name !== '' ? this.renderGame() : this.renderUserForm()
+            this.state.name !== '' ? this.renderCategories() : this.renderUserForm()
         )
     }
 }
