@@ -22,10 +22,9 @@ class Categories extends React.Component {
     }
 
     render() {
-        if ()
-            return (
-                this.state.category === '' ? this.renderCategories() : this.renderGame()
-            )
+        return (
+            this.state.category === '' ? this.renderCategories() : this.renderGame()
+        )
     }
 
     resetCategories() {
