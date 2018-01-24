@@ -28,7 +28,10 @@ class Categories extends React.Component {
     }
 
     resetCategories() {
-        this.setState({ category: '' })
+        this.props.onUserFormReset()
+        /*
+            this.setState({ category: '' })
+        */
     }
 
     renderCategories() {

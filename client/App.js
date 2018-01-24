@@ -24,11 +24,15 @@ class App extends React.Component {
     }
 
     renderCategories() {
-        return (<Categories name={this.state.name} />)
+        return (<Categories name={this.state.name} onUserFormReset={() => this.resetUserForm()} />)
     }
 
     handleUserSubmit(name) {
         this.setState({ name: name });
+    }
+
+    resetUserForm() {
+        this.setState({ name: '' });
     }
 
     render() {
