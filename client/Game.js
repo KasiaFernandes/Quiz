@@ -9,7 +9,7 @@ class Game extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            questionsData: QuestionsData,
+            questionsData: QuestionsData.filter(question => question.category === props.category),
             selectedQuestion: undefined,
             score: 0
         }
@@ -60,11 +60,10 @@ class Game extends React.Component {
         })
     }
 
-    /*
+
     startAgain() {
-        return (< />)
+        this.props.onGameReset()
     }
-    */
 
     // Layout 
     render() {
@@ -74,9 +73,8 @@ class Game extends React.Component {
                 {this.state.questionsData.length ?
                     <div>
                         <Question question={this.state.selectedQuestion} onAnswer={this.onAnswer} />
-
                     </div> : <div><h2 className={style.End}>No more questions!</h2>
-                        <button onClick={this.renderUserForm}>START AGAIN</button>
+                        <button onClick={() => this.startAgain()}>START AGAIN</button>
                     </div>
                 }
             </div>
